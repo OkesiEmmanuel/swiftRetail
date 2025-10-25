@@ -6,7 +6,7 @@ async function getProducts() {
     const d = await import('@/sample-data/products.json')
     return d.default
   }
-  const { data } = await supabase.from('products').select('*').order('created_at', { ascending: false })
+  const { data } = await supabase!.from('products').select('*').order('created_at', { ascending: false })
   return data || []
 }
 
