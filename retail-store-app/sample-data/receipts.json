@@ -1,0 +1,4 @@
+[
+  {"id":"r1","sale_id":"s1","customer_name":"Mr. Obi","customer_email":"obi@example.com","items":[{"product_id":"p1","name":"Coca Cola 50cl","price":200,"qty":3}],"total":600,"date":"2025-05-01T09:12:00Z"},
+  {"id":"r2","sale_id":"s3","customer_name":"Mrs. Aisha","customer_email":"aisha@example.com","items":[{"product_id":"p1","name":"Coca Cola 50cl","price":200,"qty":5}],"total":1000,"date":"2025-05-02T12:00:00Z"}
+]

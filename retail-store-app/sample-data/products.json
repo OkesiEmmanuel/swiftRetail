@@ -1,0 +1,5 @@
+[
+  {"id":"p1","name":"Coca Cola 50cl","category":"Beverages","price":200,"stock":120},
+  {"id":"p2","name":"Pepsi 50cl","category":"Beverages","price":190,"stock":100},
+  {"id":"p3","name":"Fanta 50cl","category":"Beverages","price":180,"stock":90}
+]
