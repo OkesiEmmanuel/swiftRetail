@@ -1,6 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useMemo } from 'react';
+import { useFetch } from '@/lib/hooks';
 import {
 
 
@@ -29,13 +30,7 @@ const Leaderboard = () => {
     const [sortBy, setSortBy] = useState<SortKey>('sales');
     const [filterValue, setFilterValue] = useState<string>('');
 
-    // Mock data - replace with your actual data
-    const rawData: SalesData[] = [
-        { id: '1', name: 'John Doe', sales: 150000, transactions: 89, revenue: 250000 },
-        { id: '2', name: 'Jane Smith', sales: 180000, transactions: 95, revenue: 300000 },
-        { id: '3', name: 'Mike Johnson', sales: 120000, transactions: 75, revenue: 200000 },
-        // Add more data as needed
-    ];
+    const { data: rawData = [] } = useFetch<SalesData[]>('/api/sales/leaderboard');
 
     const sortedAndFilteredData = useMemo(() => {
         return rawData

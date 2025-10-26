@@ -22,9 +22,11 @@ type LeaderboardRow = {
 }
 
 const COLORS = ['#00C49F', '#0088FE', '#FFBB28', '#FF8042']
-const formatCurrency = (val: number) => `₦${val.toLocaleString()}`
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+import Leaderboard from '@/components/ui/Leaderboard'
+import { formatCurrency } from '@/lib/utils'
 
 // ==================== Components ====================
 
