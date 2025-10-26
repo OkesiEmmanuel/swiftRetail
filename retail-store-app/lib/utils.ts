@@ -50,7 +50,7 @@ export async function getSalesData() {
       count(*) as transactions,
       sum(total_price) as revenue
     `)
-    .group('staff_name');
+    // .group('staff_name');
     
   return data || [];
 }

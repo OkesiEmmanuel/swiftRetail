@@ -1,5 +1,5 @@
 [
-  {"id":"u1","name":"Amaka","role":"staff"},
-  {"id":"u2","name":"Tunde","role":"staff"},
-  {"id":"u3","name":"Chi","role":"manager"}
+  {"id":"u1","name":"Amaka","email":"emmanuelokesi0@gmail.com","role":"staff"},
+  {"id":"u2","name":"Tunde","email":"emmanuelo@gmail.com","role":"staff"},
+  {"id":"u3","name":"Chi","email":"emma@gmail.com","role":"manager"}
 ]
