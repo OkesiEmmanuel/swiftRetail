@@ -136,16 +136,16 @@ export default function NewSalePage() {
   const handlePrint = () => window.print();
 
   return (
-    <main className="p-6 md:p-10 space-y-8 bg-gray-50 min-h-screen">
+    <main className="p-6 md:p-10 space-y-8 bg-dark dark:text-white min-h-screen">
       {/* Sale Form */}
-      <div className="max-w-4xl mx-auto bg-white shadow rounded-lg p-6 border border-gray-100">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">
+      <div className="w-full mx-auto bg-gray-700 dark:bg-gray-800 hover:bg-gray-700 shadow-3xl rounded-lg p-6 ">
+        <h2 className="text-xl font-semibold mb-4 text-dark dark:text-blue-500">
           Add New Sale
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-100 mb-1">
               Product
             </label>
             <select
@@ -153,7 +153,7 @@ export default function NewSalePage() {
               onChange={(e) =>
                 setFormData({ ...formData, product_id: e.target.value })
               }
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border-gray-600 dark:text-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Select product</option>
               {products.map((p) => (
@@ -165,7 +165,7 @@ export default function NewSalePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-100 mb-1">
               Staff
             </label>
             <select
@@ -173,7 +173,7 @@ export default function NewSalePage() {
               onChange={(e) =>
                 setFormData({ ...formData, staff_id: e.target.value })
               }
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border-gray-600 dark:text-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Select staff</option>
               {staffList.map((s) => (
@@ -185,7 +185,7 @@ export default function NewSalePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-100 mb-1">
               Quantity
             </label>
             <input
@@ -194,22 +194,22 @@ export default function NewSalePage() {
               onChange={(e) =>
                 setFormData({ ...formData, quantity: e.target.value })
               }
-              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border-gray-600 dark:text-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter quantity"
             />
           </div>
         </div>
 
         <div className="flex justify-between items-center mt-4">
-          <span className="font-semibold text-gray-700">Total:</span>
-          <span className="text-lg font-bold text-green-600">
+          <span className="font-semibold text-gray-100">Total:</span>
+          <span className="text-lg font-bold fs-3 text-green-600">
             ₦{total || 0}
           </span>
         </div>
 
         <button
           onClick={handleAddSale}
-          className="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+          className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-gray-700 transition"
         >
           Add Sale
         </button>
@@ -220,26 +220,26 @@ export default function NewSalePage() {
         <input
           type="text"
           placeholder="Search sales..."
-          className="border border-gray-300 rounded-md px-3 py-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-700 rounded-md px-3 py-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <div className="flex gap-2">
           <button
             onClick={exportToCSV}
-            className="px-4 py-2 border rounded-md hover:bg-gray-100"
+            className="px-4 py-2 border rounded-md hover:bg-gray-700"
           >
             Export CSV
           </button>
           <button
             onClick={exportToPDF}
-            className="px-4 py-2 border rounded-md hover:bg-gray-100"
+            className="px-4 py-2 border rounded-md hover:bg-gray-700"
           >
             Export PDF
           </button>
           <button
             onClick={handlePrint}
-            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-gray-700"
           >
             Print
           </button>
@@ -247,9 +247,9 @@ export default function NewSalePage() {
       </div>
 
       {/* Table */}
-      <div className="bg-white shadow rounded-lg overflow-x-auto border border-gray-100">
-        <table className="min-w-full text-sm text-left text-gray-700">
-          <thead className="bg-gray-100 text-gray-800">
+      <div className="overflow-x-auto bg-white dark:bg-gray-800 shadow-2xl rounded-lg">
+        <table className="w-full text-sm text-left border-collapse">
+          <thead className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 uppercase text-xs">
             <tr>
               {["Product", "Staff", "Quantity", "Total", "Date"].map((col) => (
                 <th
@@ -271,12 +271,12 @@ export default function NewSalePage() {
             {sortedSales.map((sale) => (
               <tr
                 key={sale.id}
-                className="border-t hover:bg-gray-50 transition-colors"
+                className="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
               >
                 <td className="px-4 py-2">{sale.product_name}</td>
                 <td className="px-4 py-2">{sale.staff_name}</td>
                 <td className="px-4 py-2">{sale.quantity}</td>
-                <td className="px-4 py-2 text-green-600 font-medium">
+                <td className="px-4 py-2 font-bold text-green-600 font-large">
                   ₦{sale.total_price}
                 </td>
                 <td className="px-4 py-2">
